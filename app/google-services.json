@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "177664578873",
+    "firebase_url": "https://police-call-3cecf-default-rtdb.firebaseio.com",
+    "project_id": "police-call-3cecf",
+    "storage_bucket": "police-call-3cecf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177664578873:android:c7a8817af9628d675684e8",
+        "android_client_info": {
+          "package_name": "com.example.policecall"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDMY6XbjJw1g-dXqReRzypk3Sp-k-BPX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177664578873:android:40e94d732de0d1ab5684e8",
+        "android_client_info": {
+          "package_name": "com.example.studentvoice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDMY6XbjJw1g-dXqReRzypk3Sp-k-BPX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

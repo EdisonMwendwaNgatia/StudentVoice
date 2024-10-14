@@ -1,0 +1,57 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btnHostelComplaint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hostel Complaint"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnSportsComplaint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sports Complaint"
+        app:layout_constraintTop_toBottomOf="@id/btnHostelComplaint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnMissingMarksComplaint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Missing Marks Complaint"
+        app:layout_constraintTop_toBottomOf="@id/btnSportsComplaint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnSecurityComplaint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Security (Theft) Complaint"
+        app:layout_constraintTop_toBottomOf="@id/btnMissingMarksComplaint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnLecturesComplaint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Lectures Complaint"
+        app:layout_constraintTop_toBottomOf="@id/btnSecurityComplaint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
