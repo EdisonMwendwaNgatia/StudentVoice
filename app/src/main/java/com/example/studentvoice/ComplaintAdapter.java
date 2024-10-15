@@ -40,7 +40,7 @@ public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintAdapter.Comp
 
         holder.tvComplaintType.setText(complaint.getType());
         holder.tvComplaintDetails.setText(complaint.getDetails());
-        holder.tvLikesCount.setText(complaint.getLikes() + " Likes");
+        holder.tvLikesCount.setText(complaint.getLikes() + "Likes");
 
         boolean isLiked = likedComplaints.containsKey(complaintId) && likedComplaints.get(complaintId);
         if (isLiked) {

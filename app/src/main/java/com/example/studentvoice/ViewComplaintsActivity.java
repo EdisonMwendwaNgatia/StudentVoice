@@ -1,5 +1,6 @@
 package com.example.studentvoice;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -41,6 +42,7 @@ public class ViewComplaintsActivity extends AppCompatActivity {
 
         // Fetch complaints from Firebase
         complaintsRef.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 complaintList.clear();
