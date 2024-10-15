@@ -40,13 +40,13 @@ public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintAdapter.Comp
 
         holder.tvComplaintType.setText(complaint.getType());
         holder.tvComplaintDetails.setText(complaint.getDetails());
-        holder.tvLikesCount.setText(complaint.getLikes() + "Likes");
+        holder.tvLikesCount.setText(complaint.getLikes() + R.string.likes);
 
-        boolean isLiked = likedComplaints.containsKey(complaintId) && likedComplaints.get(complaintId);
+        boolean isLiked = likedComplaints.containsKey(complaintId) && Boolean.TRUE.equals(likedComplaints.get(complaintId));
         if (isLiked) {
-            holder.btnLike.setText("unlike");
+            holder.btnLike.setText(R.string.unlike);
         } else {
-            holder.btnLike.setText("like");
+            holder.btnLike.setText(R.string.like);
         }
 
         holder.btnLike.setOnClickListener(v -> {
@@ -54,7 +54,7 @@ public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintAdapter.Comp
                 // User has already liked the complaint, so unlike it
                 int newLikes = complaint.getLikes() - 1;
                 complaint.setLikes(newLikes);
-                holder.tvLikesCount.setText(newLikes + " Likes");
+                holder.tvLikesCount.setText(newLikes + R.string.likes);
 
                 // Update the likes in Firebase
                 DatabaseReference complaintRef = FirebaseDatabase.getInstance().getReference("complaints").child(complaintId);
@@ -66,7 +66,7 @@ public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintAdapter.Comp
                 // User has not yet liked the complaint, so like it
                 int newLikes = complaint.getLikes() + 1;
                 complaint.setLikes(newLikes);
-                holder.tvLikesCount.setText(newLikes + " Likes");
+                holder.tvLikesCount.setText(newLikes + R.string.likes);
 
                 // Update the likes in Firebase
                 DatabaseReference complaintRef = FirebaseDatabase.getInstance().getReference("complaints").child(complaintId);
@@ -78,9 +78,9 @@ public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintAdapter.Comp
 
             // Update the button text
             if (isLiked) {
-                holder.btnLike.setText("Like");
+                holder.btnLike.setText(R.string.like);
             } else {
-                holder.btnLike.setText("Unlike");
+                holder.btnLike.setText(R.string.unlike);
             }
         });
     }

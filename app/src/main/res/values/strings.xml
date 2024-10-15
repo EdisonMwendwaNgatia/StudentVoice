@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Student Voice</string>
+    <string name="like">Like</string>
+    <string name="unlike">Unlike</string>
+    <string name="likes">Likes</string>
+    <string name="login">Login</string>
+    <string name="admission_number">Admission Number</string>
+    <string name="password">Password</string>
+    <string name="report_complaints">Report Complaints</string>
+    <string name="view_complaints">View Complaints</string>
+    <string name="addressed_complaints">Addressed Complaints</string>
+    <string name="hostel_complaint">Hostel Complaint</string>
+    <string name="sports_complaint">Sports Complaint</string>
+    <string name="missing_marks_complaint">Missing Marks Complaint</string>
+    <string name="security_theft_complaint">Security (Theft) Complaint</string>
+    <string name="lectures_complaint">Lectures Complaint</string>
+    <string name="complaint_type">Complaint Type</string>
+    <string name="enter_complaint_details">Enter Complaint Details</string>
+    <string name="submit_complaint">Submit Complaint</string>
 </resources>

@@ -1,10 +1,8 @@
 package com.example.studentvoice;
 
 public class AddressedComplaint {
-    private String id;
-    private String details;
-
-    public AddressedComplaint() {}
+    private final String id;
+    private final String details;
 
     public AddressedComplaint(String id, String details) {
         this.id = id;
