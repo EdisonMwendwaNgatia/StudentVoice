@@ -70,7 +70,7 @@ public class ViewComplaintsActivity extends AppCompatActivity {
 
         builder.setPositiveButton("OK", (dialog, which) -> {
             String password = input.getText().toString();
-            if (password.equals("12345")) { // replace with your hardcoded password
+            if (password.equals("12345")) { // hardcoded password
                 startActivity(new Intent(ViewComplaintsActivity.this, AddressingComplaintsActivity.class));
             } else {
                 Toast.makeText(ViewComplaintsActivity.this, "Incorrect password", Toast.LENGTH_SHORT).show();

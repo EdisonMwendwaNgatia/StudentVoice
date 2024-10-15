@@ -12,10 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintAdapter.ComplaintViewHolder> {
     private final List<Complaint> complaintList;
+    private final Map<String, Boolean> likedComplaints = new HashMap<>();
 
     public ComplaintAdapter(List<Complaint> complaintList) {
         this.complaintList = complaintList;
@@ -26,23 +29,59 @@ public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintAdapter.Comp
     public ComplaintViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.complaint_item, parent, false);
         return new ComplaintViewHolder(view);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull ComplaintViewHolder holder, int position) {
         Complaint complaint = complaintList.get(position);
+
+        String complaintId = complaint.getId();
+
         holder.tvComplaintType.setText(complaint.getType());
         holder.tvComplaintDetails.setText(complaint.getDetails());
         holder.tvLikesCount.setText(complaint.getLikes() + " Likes");
 
-        holder.btnLike.setOnClickListener(v -> {
-            int newLikes = complaint.getLikes() + 1;
-            complaint.setLikes(newLikes);
-            holder.tvLikesCount.setText(newLikes + " Likes");
+        boolean isLiked = likedComplaints.containsKey(complaintId) && likedComplaints.get(complaintId);
+        if (isLiked) {
+            holder.btnLike.setText("unlike");
+        } else {
+            holder.btnLike.setText("like");
+        }
 
-            // Update the likes in Firebase
-            DatabaseReference complaintRef = FirebaseDatabase.getInstance().getReference("complaints").child(complaint.getId());
-            complaintRef.child("likes").setValue(newLikes);
+        holder.btnLike.setOnClickListener(v -> {
+            if (isLiked) {
+                // User has already liked the complaint, so unlike it
+                int newLikes = complaint.getLikes() - 1;
+                complaint.setLikes(newLikes);
+                holder.tvLikesCount.setText(newLikes + " Likes");
+
+                // Update the likes in Firebase
+                DatabaseReference complaintRef = FirebaseDatabase.getInstance().getReference("complaints").child(complaintId);
+                complaintRef.child("likes").setValue(newLikes);
+
+                // Remove the complaint from the likedComplaints map
+                likedComplaints.remove(complaintId);
+            } else {
+                // User has not yet liked the complaint, so like it
+                int newLikes = complaint.getLikes() + 1;
+                complaint.setLikes(newLikes);
+                holder.tvLikesCount.setText(newLikes + " Likes");
+
+                // Update the likes in Firebase
+                DatabaseReference complaintRef = FirebaseDatabase.getInstance().getReference("complaints").child(complaintId);
+                complaintRef.child("likes").setValue(newLikes);
+
+                // Add the complaint to the likedComplaints map
+                likedComplaints.put(complaintId, true);
+            }
+
+            // Update the button text
+            if (isLiked) {
+                holder.btnLike.setText("Like");
+            } else {
+                holder.btnLike.setText("Unlike");
+            }
         });
     }
 
@@ -64,4 +103,3 @@ public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintAdapter.Comp
         }
     }
 }
-
