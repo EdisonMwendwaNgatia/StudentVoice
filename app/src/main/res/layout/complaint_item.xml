@@ -23,7 +23,7 @@
         android:id="@+id/tvComplaintDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Complaint Details"
+        android:text="@string/complaint_details"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@id/tvComplaintType"
@@ -36,7 +36,7 @@
         android:id="@+id/tvLikesCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 Likes"
+        android:text="@string/_0_likes"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@id/tvComplaintDetails"
@@ -48,9 +48,20 @@
         android:id="@+id/btnLike"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Like"
+        android:text="@string/like"
         app:layout_constraintTop_toBottomOf="@id/tvComplaintDetails"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
+    <!--delete button-->
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tvComplaintDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

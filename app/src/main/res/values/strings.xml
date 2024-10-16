@@ -17,4 +17,11 @@
     <string name="complaint_type">Complaint Type</string>
     <string name="enter_complaint_details">Enter Complaint Details</string>
     <string name="submit_complaint">Submit Complaint</string>
+    <string name="update_complaint">Update Complaint</string>
+    <string name="submit">Submit</string>
+    <string name="enter_addressed_details">Enter addressed details</string>
+    <string name="manage_complaints">Manage Complaints</string>
+    <string name="delete">Delete</string>
+    <string name="_0_likes">0 Likes</string>
+    <string name="complaint_details">Complaint Details</string>
 </resources>

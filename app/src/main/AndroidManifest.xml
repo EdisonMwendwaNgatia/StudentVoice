@@ -58,6 +58,9 @@
             android:name=".AddressedComplaintsActivity"
             android:exported="true" />
 
+        <activity android:name=".ManageComplaintsActivity"
+            android:exported="true"/>
+
     </application>
 
 </manifest>

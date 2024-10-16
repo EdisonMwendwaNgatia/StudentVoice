@@ -9,7 +9,7 @@
         android:id="@+id/etAddressedDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Enter addressed details"
+        android:hint="@string/enter_addressed_details"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -18,9 +18,20 @@
         android:id="@+id/btnSubmitAddressed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="@string/submit"
         app:layout_constraintTop_toBottomOf="@id/etAddressedDetails"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnManageComplaints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/manage_complaints"
+        app:layout_constraintTop_toBottomOf="@id/btnSubmitAddressed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

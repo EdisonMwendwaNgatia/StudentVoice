@@ -24,6 +24,7 @@ import java.util.List;
 public class ViewComplaintsActivity extends AppCompatActivity {
     private ComplaintAdapter complaintAdapter;
     private List<Complaint> complaintList;
+    private boolean isAdmin = false; // Default non-admin
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,15 @@ public class ViewComplaintsActivity extends AppCompatActivity {
         // Initialize Firebase
         DatabaseReference complaintsRef = FirebaseDatabase.getInstance().getReference("complaints");
         complaintList = new ArrayList<>();
-        complaintAdapter = new ComplaintAdapter(complaintList);
 
+        // Check if the user is an admin (for now it's based on hardcoded logic, but you can replace it with actual logic)
+        // For example, you might check the user's role in Firebase Authentication or a flag in the database
+        if (checkIfUserIsAdmin()) {
+            isAdmin = true; // Set to true if user is admin
+        }
+
+        // Pass the complaint list and admin status to the adapter
+        complaintAdapter = new ComplaintAdapter(complaintList, isAdmin);
         rvComplaints.setAdapter(complaintAdapter);
 
         // Fetch complaints from Firebase
@@ -61,6 +69,11 @@ public class ViewComplaintsActivity extends AppCompatActivity {
 
         // Button to address complaints
         findViewById(R.id.btnAddressComplaint).setOnClickListener(v -> promptForAdminPassword());
+    }
+
+    private boolean checkIfUserIsAdmin() {
+        // Placeholder for actual admin check logic, e.g., check user role from Firebase Authentication
+        return false; // Replace this with real logic
     }
 
     private void promptForAdminPassword() {

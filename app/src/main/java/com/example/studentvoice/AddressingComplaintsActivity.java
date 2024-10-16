@@ -1,5 +1,6 @@
 package com.example.studentvoice;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +23,7 @@ public class AddressingComplaintsActivity extends AppCompatActivity {
         etAddressedDetails = findViewById(R.id.etAddressedDetails);
         Button btnSubmitAddressed = findViewById(R.id.btnSubmitAddressed);
 
+
         // Initialize Firebase
         addressedComplaintsRef = FirebaseDatabase.getInstance().getReference("addressed_complaints");
 
@@ -40,5 +42,11 @@ public class AddressingComplaintsActivity extends AppCompatActivity {
                 Toast.makeText(AddressingComplaintsActivity.this, "Please enter addressed information", Toast.LENGTH_SHORT).show();
             }
         });
+        Button btnManageComplaints = findViewById(R.id.btnManageComplaints);
+        btnManageComplaints.setOnClickListener(v -> {
+            Intent intent = new Intent(AddressingComplaintsActivity.this, ManageComplaintsActivity.class);
+            startActivity(intent);
+        });
     }
 }
+
