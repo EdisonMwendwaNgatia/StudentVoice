@@ -1,67 +1,79 @@
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
 
-    <!-- Complaint Type -->
-    <TextView
-        android:id="@+id/tvComplaintType"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Complaint Type"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:padding="16dp">
 
-    <!-- Complaint Details -->
-    <TextView
-        android:id="@+id/tvComplaintDetails"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/complaint_details"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/tvComplaintType"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        <!-- Complaint Type -->
+        <TextView
+            android:id="@+id/tvComplaintType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Complaint Type"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Likes Count -->
-    <TextView
-        android:id="@+id/tvLikesCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_0_likes"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/tvComplaintDetails"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="8dp"/>
+        <!-- Complaint Details -->
+        <TextView
+            android:id="@+id/tvComplaintDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Complaint details"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tvComplaintType"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
 
-    <!-- Like Button -->
-    <Button
-        android:id="@+id/btnLike"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/like"
-        app:layout_constraintTop_toBottomOf="@id/tvComplaintDetails"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
-    <!--delete button-->
-    <Button
-        android:id="@+id/btnDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/delete"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/tvComplaintDetails"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <!-- Likes Count -->
+        <TextView
+            android:id="@+id/tvLikesCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 likes"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tvComplaintDetails"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"/>
 
+        <!-- Like Button -->
+        <Button
+            android:id="@+id/btnLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#33D7E6"
+            android:text="Like"
+            app:layout_constraintTop_toBottomOf="@id/tvComplaintDetails"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Delete Button (visible only for admin) -->
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#33D7E6"
+            android:layout_marginTop="8dp"
+            android:text="Delete"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.638"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvComplaintDetails" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
