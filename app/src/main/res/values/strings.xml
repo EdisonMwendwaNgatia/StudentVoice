@@ -24,4 +24,5 @@
     <string name="delete">Delete</string>
     <string name="_0_likes">0 Likes</string>
     <string name="complaint_details">Complaint Details</string>
+    <string name="details_about_the_complaint">Details about the complaint</string>
 </resources>

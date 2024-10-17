@@ -20,14 +20,15 @@ public class AddressedComplaintAdapter extends RecyclerView.Adapter<AddressedCom
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_2, parent, false);
+        // Use your custom layout for the card
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_addressed_complaint, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         AddressedComplaint addressedComplaint = addressedComplaints.get(position);
-        holder.tvAddressedDetails.setText(addressedComplaint.getDetails());
+        holder.tvComplaintDetails.setText(addressedComplaint.getDetails());
     }
 
     @Override
@@ -36,11 +37,12 @@ public class AddressedComplaintAdapter extends RecyclerView.Adapter<AddressedCom
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvAddressedDetails;
+        TextView tvComplaintId, tvComplaintDetails;
 
         ViewHolder(View itemView) {
             super(itemView);
-            tvAddressedDetails = itemView.findViewById(android.R.id.text1); // Change this to your desired TextView ID
+            // Link the TextViews to your card layout
+            tvComplaintDetails = itemView.findViewById(R.id.tvComplaintDetails);
         }
     }
 }
